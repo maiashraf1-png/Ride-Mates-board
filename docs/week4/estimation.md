@@ -6,7 +6,7 @@
 
 ## 1. Estimation Method
 
-| Item | Choice |\
+| Item | Choice |\ظظظ
 |---|---|
 | Technique | Planning Poker (team consensus) |
 | Scale | Fibonacci: 1, 2, 3, 5, 8 |
