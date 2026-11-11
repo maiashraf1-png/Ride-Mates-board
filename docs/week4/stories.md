@@ -1,7 +1,7 @@
 # Commuter Carpool Board — User Stories
 
-**Team:** [RideMates]  
-**Members:** [Malak Mohamed | Mai Ashraf | Gana Ahmed | Menna Allah Mostafa | Maram Moustafa]  
+**Team:** RideMates  
+**Members:** Malak Mohamed | Mai Ashraf | Gana Ahmed | Menna Allah Mostafa | Maram Moustafa  
 **Week:** 4 Deliverable
 
 ## 1. Product Overview
@@ -71,12 +71,13 @@ As a **user**, I want to register and log in so that I can offer or book rides u
 
 ### US-02 — Offer a Ride (3 pts)
 
-As a **driver**, I want to offer a ride by entering my area, departure time, and free seats so that passengers can find my ride.
+As a **driver**, I want to offer a ride by entering my area, departure time, estimated arrival time, and free seats so that passengers can find my ride.
 
 **Acceptance Criteria**
 
 - Given all fields are valid, when I submit, then the ride is published and searchable.
-- Given free seats less than 1 or a departure time in the past, then the ride is rejected with a clear message.
+- Given free seats less than 1, a departure time in the past, or an estimated arrival time earlier than the departure time, then the ride is rejected with a clear message.
+- The estimated arrival time is stored and used by the arrival-time search.
 
 ### US-03 — View My Offered Rides (2 pts)
 
@@ -84,7 +85,7 @@ As a **driver**, I want to view my offered rides so that I can manage them.
 
 **Acceptance Criteria**
 
-- Given I have rides, when I open "My Rides", then I see each ride with area, time, and remaining seats.
+- Given I have rides, when I open "My Rides", then I see each ride with area, departure time, estimated arrival time, and remaining seats.
 - Given I have no rides, then an empty-state message is shown.
 
 ### US-04 — See Who Booked My Seats (2 pts)
@@ -114,9 +115,9 @@ As a **driver**, I want to cancel my ride so that passengers know the trip will 
 | Letter | Technique | Result |
 |---|---|---|
 | S — Spike | Time-boxed research on how to match area and time | SP-01 |
-| P — Paths | Separate paths: by area, by time, and combined | US-06, US-07, US-08 |
+| P — Paths | Separate paths: by area, by arrival time, and combined | US-06, US-07, US-08 |
 | I — Interfaces | Results list and ride details screen | US-09 |
-| D — Data | Data handled: area, departure time, and free seats | US-06 to US-09 |
+| D — Data | Area, departure time, estimated arrival time, and free seats | US-06 to US-09 |
 | R — Rules | Seat limits and own-ride rule | US-11, US-12 |
 
 ### SP-01 — Spike: Matching Approach (2 pts)
@@ -126,7 +127,7 @@ As the **team**, we want to investigate how to match rides by area and time so t
 **Acceptance Criteria**
 
 - Time-boxed to 1 working day.
-- Output: a short written decision (area list vs. free text, time range logic).
+- Output: a short written decision covering area selection (area list vs. free text) and arrival-time range logic.
 
 ### US-06 — Search Rides by Area (3 pts)
 
@@ -143,16 +144,16 @@ As a **passenger**, I want to find rides arriving before a chosen time (e.g., 9:
 
 **Acceptance Criteria**
 
-- Given I set "arrive before 09:00", then only rides arriving at or before 09:00 are shown.
-- Results are sorted by earliest departure.
+- Given I set "arrive before 09:00", then only rides with an estimated arrival time at or before 09:00 are shown.
+- Results are sorted by earliest estimated arrival time.
 
 ### US-08 — Combine Area and Time Search (2 pts)
 
-As a **passenger**, I want to search by area and time together so that I see only the most relevant rides.
+As a **passenger**, I want to search by area and arrival time together so that I see only the most relevant rides.
 
 **Acceptance Criteria**
 
-- Given both filters, then results satisfy both.
+- Given both filters, then results satisfy both the selected area and arrival-time conditions.
 - Given only one filter, then the search still works.
 
 ### US-09 — View Ride Details (2 pts)
@@ -161,7 +162,7 @@ As a **passenger**, I want to view ride details and available seats so that I ca
 
 **Acceptance Criteria**
 
-- Details show area, departure time, free seats, and driver name.
+- Details show area, departure time, estimated arrival time, free seats, and driver name.
 - The driver's phone number is not shown before booking confirmation (see US-18).
 
 ---
@@ -241,7 +242,7 @@ As a **user**, I want to be notified when a ride or booking is cancelled so that
 
 **Acceptance Criteria**
 
-- Given a driver cancels a ride, then every booked passenger is notified.
+- Given a driver cancels a ride, then every passenger with a booking on that ride is notified.
 - Given a passenger cancels a booking, then the driver is notified.
 
 ### US-18 — Show Phone Numbers Only After Confirmation (3 pts) — BR-3
