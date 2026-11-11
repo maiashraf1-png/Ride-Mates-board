@@ -1,2 +1,2 @@
-# commuter-carpool-board
-Agile Software Engineering - Commuter Carpool Board
+RideMates project
+Agile Software Engineering - RideMates Board
