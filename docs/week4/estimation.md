@@ -1,4 +1,4 @@
-# Estimation — Commuter Carpool Board
+# Estimation — Ride-Mates-Board
 
 **Team:** RideMates  
 **Members:** Malak Mohamed | Mai Ashraf | Gana Ahmed | Menna Allah Mostafa | Maram Moustafa  
