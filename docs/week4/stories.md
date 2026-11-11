@@ -220,7 +220,7 @@ AC4 – Confirm Cancellation
 | P — Paths | Separate paths: by area, by arrival time, and combined | US-06, US-07, US-08 |
 | I — Interfaces | Results list and ride details screen | US-09 |
 | D — Data | Area, departure time, estimated arrival time, and free seats | US-06 to US-09 |
-| R — Rules | Seat limits and own-ride rule | US-11, US-12 |
+| R — Rules | Seat limits and own-ride rule | US-11, US-12 | US-13
 
 ### SP-01 — Spike: Matching Approach (2 pts)
 
@@ -419,8 +419,20 @@ As the **system**, I want to block drivers from booking their own rides so that 
 
 **Acceptance Criteria**
 
-- Given I am the driver of a ride, when I try to book it, then the action is blocked with a message.
-- The "Book" button is hidden or disabled on my own rides.
+AC1 – Prevent Driver from Booking Own Ride
+- Given a driver is logged in and owns a ride.
+- When the driver attempts to book a seat on their own ride.
+- Then the system blocks the booking request and displays an appropriate error message.
+  
+- AC2 – Hide or Disable Book Button
+- Given a driver is viewing a ride they have offered.
+- When the ride details page is displayed.
+- Then the system hides or disables the "Book" button.
+  
+- AC3 – Allow Booking Other Drivers' Rides
+- Given a driver is viewing a ride offered by another driver.
+- When the driver selects the "Book" button.
+- Then the system allows the booking request if all booking conditions are met
 
 ### US-13 — Confirm a Booking (3 pts)
 
