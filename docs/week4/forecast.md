@@ -1,4 +1,4 @@
-# Forecast – Commuter Carpool Board
+# Forecast – Ride-Mates-Board
 
 **Team Name:** RideMates  
 **Members:** Malak Mohamed | Mai Ashraf | Gana Ahmed | Menna Allah Mostafa | Maram Moustafa  
