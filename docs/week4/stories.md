@@ -61,10 +61,34 @@ As a **user**, I want to register and log in so that I can offer or book rides u
 
 **Acceptance Criteria**
 
-- Given valid details (name, email, phone, role), when I register, then my account is created.
-- Given a registered email, when I register again, then an error is shown.
-- Given correct credentials, when I log in, then I access my dashboard; given wrong credentials, access is denied.
-
+AC1 – Successful Registration
+- Given a user is not registered in the system.
+- When the user enters a valid name, email, phone number, password, and role, and clicks Register.
+- Then the system creates a new account and displays a success confirmation.
+AC2 – Duplicate Email
+- Given an account already exists with the same email address.
+- When the user attempts to register using that email address.
+- Then the system rejects the registration and displays an error message indicating that the email is already registered.
+AC3 – Required Fields Validation
+- Given a user is on the registration page.
+- When the user submits the registration form with one or more required fields empty.
+- Then the system prevents registration and displays validation messages for the missing fields.
+AC4 – Invalid Email Format
+- Given a user is on the registration page.
+- When the user enters an invalid email format.
+- Then the system rejects the input and displays an appropriate validation message.
+AC5 – Successful Login
+- Given a user has an existing registered account.
+- When the user enters the correct email and password and clicks Login.
+- Then the system authenticates the user and redirects them to their dashboard.
+AC6 – Invalid Login Credentials
+- Given a user has an existing registered account.
+- When the user enters an incorrect email or password.
+- Then the system denies access and displays an appropriate error message.
+AC7 – Unregistered Email
+- Given no account exists with the entered email address.
+- When the user attempts to log in.
+- Then the system denies access and displays an error message
 ---
 
 ## 5. Epic: Offer a Ride
