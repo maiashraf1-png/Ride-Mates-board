@@ -105,9 +105,30 @@ As a **driver**, I want to offer a ride by entering my area, departure time, est
 
 **Acceptance Criteria**
 
-- Given all fields are valid, when I submit, then the ride is published and searchable.
-- Given free seats less than 1, a departure time in the past, or an estimated arrival time earlier than the departure time, then the ride is rejected with a clear message.
-- The estimated arrival time is stored and used by the arrival-time search.
+AC1 – Successful Ride Publication
+- Given a driver is logged in and all required ride details are valid.
+- When the driver enters the departure area, departure time, estimated arrival time, and number of free seats, then submits the form.
+- Then the system publishes the ride and makes it available in search results.
+  
+AC2 – Invalid Number of Free Seats
+- Given a driver is creating a new ride.
+- When the driver enters a number of free seats less than 1.
+- Then the system rejects the ride and displays an appropriate validation message.
+  
+AC3 – Past Departure Time
+- Given a driver is creating a new ride.
+- When the driver enters a departure time earlier than the current date and time.
+- Then the system rejects the ride and displays an error message indicating that the departure time must be in the future.
+  
+AC4 – Invalid Arrival Time
+- Given a driver is creating a new ride.
+- When the driver enters an estimated arrival time earlier than the departure time.
+- Then the system rejects the ride and displays an error message indicating that the arrival time must be after the departure time.
+  
+AC5 – Store Estimated Arrival Time
+- Given a driver submits a ride with valid departure and estimated arrival times.
+- When the ride is successfully published.
+- Then the system stores the estimated arrival time and uses it when passengers search for rides by arrival time.
 
 ### US-03 — View My Offered Rides (2 pts)
 
