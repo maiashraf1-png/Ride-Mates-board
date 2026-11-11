@@ -136,8 +136,25 @@ As a **driver**, I want to view my offered rides so that I can manage them.
 
 **Acceptance Criteria**
 
-- Given I have rides, when I open "My Rides", then I see each ride with area, departure time, estimated arrival time, and remaining seats.
-- Given I have no rides, then an empty-state message is shown.
+AC1 – View Offered Rides
+- Given a driver is logged in and has one or more offered rides.
+- When the driver opens the "My Rides" page.
+- Then the system displays all rides offered by that driver, including the departure area, departure time, estimated arrival time, and remaining seats.
+  
+AC2 – Empty Rides List
+- Given a driver is logged in and has not offered any rides.
+- When the driver opens the "My Rides" page.
+- Then the system displays an empty-state message indicating that no rides have been offered yet.
+  
+AC3 – Display Only Driver's Own Rides
+- Given multiple drivers have offered rides in the system.
+- When a driver opens the "My Rides" page.
+- Then the system displays only the rides offered by the currently logged-in driver.
+  
+AC4 – Updated Ride Information
+- Given a driver's offered rides have been updated.
+- When the driver opens or refreshes the "My Rides" page.
+- Then the system displays the latest available ride information.
 
 ### US-04 — See Who Booked My Seats (2 pts)
 
