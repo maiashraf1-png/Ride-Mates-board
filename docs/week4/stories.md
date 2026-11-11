@@ -434,9 +434,12 @@ AC1 – Prevent Driver from Booking Own Ride
 - When the driver selects the "Book" button.
 - Then the system allows the booking request if all booking conditions are met
 
+
 ### US-13 — Confirm a Booking (3 pts)
 
 As a **driver**, I want to confirm a booking request so that the passenger can reserve a seat.
+
+**Acceptance Criteria** 
 
 AC1 – Successfully Confirm a Booking
 - Given a driver has a pending booking request for one of their rides.
@@ -598,7 +601,7 @@ AC3 – Hide Phone Numbers for Cancelled Bookings
   
 AC4 – Show Phone Numbers After Confirmation
 - Given a booking has the status "Confirmed".
-- When the driver views the confirmed booking details.
+- When either party views the confirmed booking details.
 - Then the system displays the passenger's phone number to the driver, and the driver's phone number to the passenger.
   
 AC5 – Protect Phone Numbers in Search Results
