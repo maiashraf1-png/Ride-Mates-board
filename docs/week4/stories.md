@@ -1,4 +1,4 @@
-# Ride-Mates Board — User Stories
+# Ride-Mates-Board — User Stories
 
 **Team:** RideMates  
 **Members:** Malak Mohamed | Mai Ashraf | Gana Ahmed | Menna Allah Mostafa | Maram Moustafa  
