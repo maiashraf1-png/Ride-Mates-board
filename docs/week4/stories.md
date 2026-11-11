@@ -228,25 +228,25 @@ As the **team**, we want to investigate how to match rides by area and time so t
 
 **Acceptance Criteria**
 
-AC1 – Successfully Cancel a Ride
-- Given a driver is logged in and has an active ride.
-- When the driver selects "Cancel Ride" and confirms the cancellation.
-- Then the system changes the ride status to "Cancelled" and removes the ride from the search results.
+AC1 – Time-Boxed Research
+- Given the team needs to investigate ride-matching approaches.
+- When the team starts the research.
+- Then the investigation must be completed within one working day.
   
-AC2 – Notify Booked Passengers
-- Given an active ride has one or more confirmed or pending bookings.
-- When the driver successfully cancels the ride.
-- Then the system sends a cancellation notification to all booked passengers (see US-17).
+AC2 – Area Selection Decision
+- Given the team is comparing different area-selection approaches.
+- When the team evaluates a predefined area list and free-text input.
+- Then the team documents the advantages and disadvantages of both approaches and selects one.
   
-AC3 – Prevent Booking on Cancelled Ride
-- Given a ride has been cancelled.
-- When a passenger attempts to book a seat on that ride.
-- Then the system prevents the booking and displays a message indicating that the ride is no longer available.
+AC3 – Arrival-Time Range Decision
+- Given the team needs to define arrival-time matching logic.
+- When the team investigates possible arrival-time ranges.
+- Then the team documents the selected matching range and its justification.
   
-AC4 – Confirm Cancellation
-- Given a driver selects "Cancel Ride".
-- When the cancellation confirmation prompt is displayed.
-- Then the system allows the driver to confirm or go back without cancelling the ride.
+AC4 – Research Documentation
+- Given the research is completed.
+- When the team reviews the findings.
+- Then a short written decision is provided covering the selected area approach and arrival-time matching logic
 
 ### US-06 — Search Rides by Area (3 pts)
 
@@ -426,20 +426,30 @@ As the **system**, I want to block drivers from booking their own rides so that 
 
 As a **driver**, I want to confirm a booking request so that the passenger can reserve a seat.
 
-AC1 – Prevent Driver from Booking Own Ride
-- Given a user is logged in as a driver and has offered a ride.
-- When the driver attempts to book a seat on their own ride.
-- Then the system blocks the booking request and displays an error message indicating that drivers cannot book their own rides.
+AC1 – Successfully Confirm a Booking
+- Given a driver has a pending booking request for one of their rides.
+- When the driver selects "Confirm" for that booking.
+- Then the system changes the booking status to "Confirmed".
   
-AC2 – Hide or Disable Book Button
-- Given a driver is viewing a ride they have offered.
-- When the ride details page is displayed.
-- Then the system hides or disables the "Book" button for that ride.
+AC2 – Update Available Seats
+- Given a ride has one or more available seats and a pending booking.
+- When the driver confirms the booking.
+- Then the system decreases the number of free seats by one.
   
-AC3 – Allow Booking Other Drivers' Rides
-- Given a driver is viewing a ride offered by another driver.
-- When the driver selects the "Book" button.
-- Then the system allows the driver to request a seat, provided all booking conditions are met.
+AC3 – Prevent Confirmation When No Seats Are Available
+- Given a ride has zero available seats.
+- When the driver attempts to confirm a pending booking.
+- Then the system rejects the confirmation and displays a message indicating that no seats are available.
+  
+AC4 – Prevent Unauthorized Confirmation
+- Given a user is not the driver who offered the ride.
+- When the user attempts to confirm or reject a booking for that ride.
+- Then the system denies the action.
+  
+AC5 – Notify Passenger
+- Given a driver's confirmation is successful.
+- When the booking status changes to "Confirmed".
+- Then the system sends an in-app notification to the passenger (see US-16)
   
 ### US-14 — Reject a Booking (2 pts)
 
